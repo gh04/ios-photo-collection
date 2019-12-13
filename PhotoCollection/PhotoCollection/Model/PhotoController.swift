@@ -19,13 +19,14 @@ class PhotoController {
     
     
    func update(photo: Photo, data: Data, title: String) {
+    
     guard let index = photos.firstIndex(of: photo) else { return }
     
-    photos[index].title = title
-    photos[index].imageData = data
+    let photo = Photo(title: title, imageData: data)
+    photos[index] = photo
     
+  
     
-        
     }
 }
 
