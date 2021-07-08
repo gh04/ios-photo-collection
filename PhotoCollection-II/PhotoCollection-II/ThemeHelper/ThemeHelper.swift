@@ -8,9 +8,9 @@
 import Foundation
 // MARK: - Theme
 enum Theme: String, CustomStringConvertible {
-    case dark = "Dark"
-    case blue = "Blue"
-    case light = "Light"
+    case black
+    case blue
+    case green
     
     var description: String {
         return rawValue
@@ -21,7 +21,7 @@ class ThemeHelper {
     
     // MARK: - Properties
     var themePreference: String?  {
-        let rawValue = UserDefaults.standard.string(forKey: .themePreferenceKey).flatMap(Theme.init) ?? .light
+        let rawValue = UserDefaults.standard.string(forKey: .themePreferenceKey).flatMap(Theme.init) ?? .green
         return rawValue.description
     }
     
@@ -33,7 +33,7 @@ class ThemeHelper {
     }
     // MARK: - Theme Methods
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set(Theme.dark.rawValue, forKey: .themePreferenceKey)
+        UserDefaults.standard.set(Theme.black.rawValue, forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToBlue() {
@@ -41,7 +41,7 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToLight() {
-        UserDefaults.standard.set(Theme.light.rawValue, forKey: .themePreferenceKey)
+        UserDefaults.standard.set(Theme.green.rawValue, forKey: .themePreferenceKey)
     }
     
 }

@@ -14,7 +14,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     
     // MARK: Properties
-    private var photo: Photo? {
+     var photo: Photo? {
         didSet {
             updateViews()
         }
