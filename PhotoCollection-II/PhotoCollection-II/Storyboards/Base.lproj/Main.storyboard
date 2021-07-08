@@ -18,19 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Txw-T8-m8L">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="170" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qu4-7j-cSS" customClass="PhotosCollectionViewCell" customModule="PhotoCollection_II" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="10" y="10" width="170" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MSg-bN-jCn">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3u-OW-ndx">
+                                            <rect key="frame" x="16" y="16" width="138" height="98"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="z3u-OW-ndx" secondAttribute="height" multiplier="69:49" id="ErX-wQ-Jw2"/>
+                                                <constraint firstAttribute="width" constant="138" id="ILW-H0-Dxu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ja-Zo-gH2">
+                                            <rect key="frame" x="16" y="121" width="138" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="z3u-OW-ndx" firstAttribute="leading" secondItem="MSg-bN-jCn" secondAttribute="leadingMargin" constant="8" id="0V2-YC-V5h"/>
+                                        <constraint firstItem="9Ja-Zo-gH2" firstAttribute="leading" secondItem="MSg-bN-jCn" secondAttribute="leadingMargin" constant="8" id="APU-IU-UhO"/>
+                                        <constraint firstItem="z3u-OW-ndx" firstAttribute="top" secondItem="MSg-bN-jCn" secondAttribute="topMargin" constant="8" id="HJh-Hj-rP7"/>
+                                        <constraint firstItem="9Ja-Zo-gH2" firstAttribute="top" secondItem="z3u-OW-ndx" secondAttribute="bottom" constant="7" id="Xqn-sk-eml"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="z3u-OW-ndx" secondAttribute="trailing" constant="8" id="iMf-xk-5oz"/>
+                                        <constraint firstItem="9Ja-Zo-gH2" firstAttribute="bottom" secondItem="MSg-bN-jCn" secondAttribute="bottomMargin" id="iWH-c7-gRO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9Ja-Zo-gH2" secondAttribute="trailing" constant="8" id="oBB-97-p2r"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="170" height="150"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -38,7 +63,10 @@
                             <outlet property="delegate" destination="QpA-JP-k04" id="OJr-wr-Fa4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="PVd-Kh-dV8"/>
+                    <navigationItem key="navigationItem" id="PVd-Kh-dV8">
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="NUF-By-EGq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyV-u6-0hP"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fE-hf-pCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
