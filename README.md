@@ -21,7 +21,7 @@ Please look at the screen recording below to know what the finished project shou
 
 ## Instructions
 
-Please fork and clone this repository. This repository does not have a starter project, so create one inside of the cloned repository folder. Be regularly committing and pushing your code as appropriate.
+Please fork and clone this repository. This repository does not have an Xcode starter project, so you will need to create one inside of the cloned repository folder before you begin. Remember to regularly commit and push your code to Github.
 
 ### Part 1 - Model Layer Set Up
 
@@ -78,9 +78,9 @@ Consider changing the collection view's section insets in the Size Inspector so 
     - `themeHelper: ThemeHelper?`
 3. Set the view controller scene's class to `PhotoDetailViewController`.
 4. Add a `UIImageView`, a `UIButton`, and a `UITextField`. Change the button's title to "Add Photo"
-5. Add a `UINavigationItem` then a `UIBarButtonItem` to the right of the navigation bar. Set its "System Item" to "Save".
+5. Add a `UIBarButtonItem` to the right of the navigation bar. Set its "System Item" to "Save".
 6. Create outlets from the image view and text field.
-7. Create an action from the "Add PHoto" button called `addPhoto`, and an action from the bar button item called `savePhoto`.
+7. Create an action from the "Add Photo" button called `addPhoto`, and an action from the bar button item called `savePhoto`.
 8. Create a "Show" segue from the "Add" bar button item in the collection view scene to this view controller. Give it an identifier.
 9. Create another "Show" segue to this view controller from the collection view cell. Give it an identifier.
 
@@ -129,12 +129,14 @@ This view controller will allow the user to (re)select their desired theme.
 
 #### PhotoDetailViewController
 
-1. Create a `setTheme` function. This should do the same thing as the `setTheme` method in your collection view controller, except that it should change the view controller's `view`'s background color instead.
-2. Create an `updateViews` function. Call the `setTheme` function at the first of this function. that takes the values in the `photo` (if it isn't `nil`) and sets them in the appropriate UI element. You will need to use the `UIImage(data: Data)` initializer to convert the `photo`'s `imageData` to a `UIImage`. You can then put that `UIImage` in the image view. Call it in the `viewDidLoad` method of the view controller.
+1. Create a `setTheme` function. This should do the same thing as the `setTheme` method in your collection view controller, except that it should change the `PhotoDetailViewController` `view`'s background color to match the `themePreference` background color property. Call this function each time the view loads.
+2. Create an `updateViews` function that takes the property values of the `photo` object (if it isn't `nil`) and sets them in the appropriate UI element. You will need to use the `UIImage(data: Data)` initializer to convert the `photo`'s `imageData` to a `UIImage`. You can then put that `UIImage` in the image view. Call this function each time the view loads.
 3. The "Save" bar button item's action should either update the `photo` if it has a value, or create a new instance of `photo` using the methods in the `photoController`. "Pop" the view controller afterwards.
 4. The `addImage` action should present a `UIImagePickerController` that allows the user to select an image to add to the `Photo` object. 
-    - **Note:** Make sure you request authorization to access the photo library, and add the "Privacy - Photo Library Usage Description" key-value pair in the info.plist.
-    - **Note:** You will need to adopt the `UIImagePickerControllerDelegate` and implement the `didFinishPickingMediaWithInfo` method to get the image the user selects, then dismiss the image picker. You will also need to adopt the `UINavigationControllerDelegate`.
+
+	- **Note:** Unless you use an unwind, a ***segue always presents a new view controller*** each time it is called.
+    - **Note:** Make sure you request authorization to access the photo library, and add the "Privacy - Photo Library Usage Description" key-value pair to the info.plist.
+    - **Note:** Your `PhotoDetailViewController` will need to adopt both the `UIImagePickerControllerDelegate` and `UINavigationControllerDelegate` protocols and implement the `didFinishPickingMediaWithInfo` method to get the image the user selects, then dismiss the image picker.
 
 ## Go Further
 
