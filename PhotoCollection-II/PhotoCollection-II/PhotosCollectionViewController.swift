@@ -8,6 +8,7 @@
 import UIKit
 
 
+
 class PhotosCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
@@ -15,7 +16,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     let themeHelper = ThemeHelper()
 
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
@@ -32,7 +32,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "PhotoDetailShowSegue":
-            guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let indexPath = sender as? NSIndexPath else { return }
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
             let photo = photoContoller.photos[indexPath.row]
             photoDetailVC.photo = photo
             photoDetailVC.photoController = photoContoller

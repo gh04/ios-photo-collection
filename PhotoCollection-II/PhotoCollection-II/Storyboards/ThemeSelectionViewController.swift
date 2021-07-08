@@ -12,6 +12,11 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: - Properties
     var themeHelper: ThemeHelper?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = UIColor.colorWith(name: themeHelper?.themePreference ?? "white")
+    }
+    
     
     // MARK: - Actions
     @IBAction func selectDarkThemeButton(_ sender: UIButton) {
