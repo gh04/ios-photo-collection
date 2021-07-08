@@ -6,26 +6,32 @@
 //
 
 import Foundation
-
+// MARK: - Theme
 enum Theme: String, CustomStringConvertible {
+    case dark = "Dark"
+    case blue = "Blue"
+    case light = "Light"
     
     var description: String {
         return rawValue
     }
-    
-    case dark = "Dark"
-    case blue = "Blue"
-    case light = "Light"
 }
 
 class ThemeHelper {
     
+    // MARK: - Properties
+    var themePreference: String?  {
+        let rawValue = UserDefaults.standard.string(forKey: .themePreferenceKey).flatMap(Theme.init) ?? .light
+        return rawValue.description
+    }
+    
+    // MARK: - Initializer
     init() {
         if themePreference == nil {
             setThemePreferenceToLight()
         }
     }
-    
+    // MARK: - Theme Methods
     func setThemePreferenceToDark() {
         UserDefaults.standard.set(Theme.dark.rawValue, forKey: .themePreferenceKey)
     }
@@ -38,12 +44,8 @@ class ThemeHelper {
         UserDefaults.standard.set(Theme.light.rawValue, forKey: .themePreferenceKey)
     }
     
-    var themePreference: String?  {
-        let rawValue = UserDefaults.standard.string(forKey: .themePreferenceKey).flatMap(Theme.init) ?? .light
-        return rawValue.description
-    }
 }
-
+// MARK: - Extension
 extension String {
     static var themePreferenceKey = "ThemePreference"
 }
