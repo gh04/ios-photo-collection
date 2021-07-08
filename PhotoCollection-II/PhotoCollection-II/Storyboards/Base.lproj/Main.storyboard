@@ -57,6 +57,8 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="170" height="150"/>
                                 <connections>
+                                    <outlet property="imageView" destination="z3u-OW-ndx" id="Bqo-FR-MZV"/>
+                                    <outlet property="label" destination="9Ja-Zo-gH2" id="n9S-Oi-JJ5"/>
                                     <segue destination="UGm-4z-bDU" kind="show" identifier="PhotoDetailShowSegue" id="Ko2-Q6-TTq"/>
                                 </connections>
                             </collectionViewCell>
