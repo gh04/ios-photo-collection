@@ -24,7 +24,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
 private func updateViews() {
     guard let photo = photo else { return }
     
-    imageView.image = UIImage(data: photo.imageData)
+    imageView.image = UIImage(data: photo.imageData)?.flattened
     label.text = photo.title
 
     }

@@ -133,6 +133,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Ag4-OS-5D4" id="8aI-yL-lyC"/>
+                        <outlet property="textField" destination="Uc3-XQ-dUJ" id="mdS-Bo-u6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pD8-pr-k6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

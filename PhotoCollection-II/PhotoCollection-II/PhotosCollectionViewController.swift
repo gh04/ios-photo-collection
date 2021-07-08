@@ -14,9 +14,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoContoller = PhotoController()
     let themeHelper = ThemeHelper()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        setTheme()
     }
     // MARK: - Method
     func setTheme() {
@@ -24,7 +27,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         self.collectionView.backgroundColor = UIColor.colorWith(name: currentTheme)
     }
 
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,7 +57,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath) as? PhotosCollectionViewCell else { fatalError("Cell is not a PhotosCollectionViewCell")}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { fatalError("Cell is not a PhotosCollectionViewCell")}
         
         let photo = photoContoller.photos[indexPath.row]
         cell.photo = photo
@@ -63,17 +65,4 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 
-}
-// MARK: - Extension
-extension UIColor {
-
-    static func colorWith(name:String) -> UIColor? {
-        let selector = Selector("\(name)Color")
-        if UIColor.self.responds(to: selector) {
-            let color = UIColor.self.perform(selector).takeUnretainedValue()
-            return (color as? UIColor)
-        } else {
-            return nil
-        }
-    }
 }

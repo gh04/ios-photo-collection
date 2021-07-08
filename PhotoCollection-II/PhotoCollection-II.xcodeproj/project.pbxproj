@@ -19,6 +19,9 @@
 		63237A0126975057004E0B35 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0026975057004E0B35 /* Photo.swift */; };
 		63237A0326975064004E0B35 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0226975064004E0B35 /* PhotoController.swift */; };
 		63237A0526975077004E0B35 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0426975077004E0B35 /* ThemeHelper.swift */; };
+		63237A0926979ABA004E0B35 /* Image+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0826979ABA004E0B35 /* Image+Scaling.swift */; };
+		63237A0B26979D1A004E0B35 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0A26979D1A004E0B35 /* UIColor.swift */; };
+		63237A0D26979D77004E0B35 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237A0C26979D77004E0B35 /* Themes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		63237A0026975057004E0B35 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		63237A0226975064004E0B35 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		63237A0426975077004E0B35 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		63237A0826979ABA004E0B35 /* Image+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Scaling.swift"; sourceTree = "<group>"; };
+		63237A0A26979D1A004E0B35 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		63237A0C26979D77004E0B35 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +78,7 @@
 				632379F326974DF3004E0B35 /* View Controllers */,
 				632379F426974E00004E0B35 /* Model */,
 				632379F626974E32004E0B35 /* Model Controller */,
-				632379F726974E5D004E0B35 /* ThemeHelper */,
+				632379F726974E5D004E0B35 /* Helper FIles */,
 				632379F226974DC9004E0B35 /* Storyboards */,
 				632379F126974DBF004E0B35 /* Resources */,
 				632379EB26974D50004E0B35 /* Info.plist */,
@@ -133,12 +139,15 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
-		632379F726974E5D004E0B35 /* ThemeHelper */ = {
+		632379F726974E5D004E0B35 /* Helper FIles */ = {
 			isa = PBXGroup;
 			children = (
 				63237A0426975077004E0B35 /* ThemeHelper.swift */,
+				63237A0826979ABA004E0B35 /* Image+Scaling.swift */,
+				63237A0A26979D1A004E0B35 /* UIColor.swift */,
+				63237A0C26979D77004E0B35 /* Themes.swift */,
 			);
-			path = ThemeHelper;
+			path = "Helper FIles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +221,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				63237A0526975077004E0B35 /* ThemeHelper.swift in Sources */,
+				63237A0D26979D77004E0B35 /* Themes.swift in Sources */,
 				63237A0126975057004E0B35 /* Photo.swift in Sources */,
 				632379F926974EDA004E0B35 /* PhotosCollectionViewController.swift in Sources */,
+				63237A0926979ABA004E0B35 /* Image+Scaling.swift in Sources */,
 				632379FF26974F94004E0B35 /* ThemeSelectionViewController.swift in Sources */,
 				632379FB26974F1B004E0B35 /* PhotosCollectionViewCell.swift in Sources */,
 				632379DE26974D50004E0B35 /* AppDelegate.swift in Sources */,
+				63237A0B26979D1A004E0B35 /* UIColor.swift in Sources */,
 				632379FD26974F5A004E0B35 /* PhotoDetailViewController.swift in Sources */,
 				63237A0326975064004E0B35 /* PhotoController.swift in Sources */,
 				632379E026974D50004E0B35 /* SceneDelegate.swift in Sources */,

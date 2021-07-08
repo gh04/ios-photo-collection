@@ -6,19 +6,8 @@
 //
 
 import Foundation
-// MARK: - Theme
-enum Theme: String, CustomStringConvertible {
-    case black
-    case blue
-    case green
-    
-    var description: String {
-        return rawValue
-    }
-}
 
 class ThemeHelper {
-    
     // MARK: - Properties
     var themePreference: String?  {
         let rawValue = UserDefaults.standard.string(forKey: .themePreferenceKey).flatMap(Theme.init) ?? .green

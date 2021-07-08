@@ -12,11 +12,11 @@ class PhotoController {
     var photos = [Photo]()
     
     // MARK: - CRUD Methods
-    private func create(photo imageData: Data, title: String) {
+     func create(photo imageData: Data, title: String) {
         let photo = Photo(imageData: imageData, title: title)
         photos.append(photo)
     }
-    private func update(photo: Photo, imageData: Data, title: String) {
+     func update(photo: Photo, imageData: Data, title: String) {
         // Getting the first instance of the photo we pass in
         guard let index = photos.firstIndex(of: photo) else { return }
         

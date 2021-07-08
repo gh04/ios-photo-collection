@@ -12,11 +12,6 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: - Properties
     var themeHelper: ThemeHelper?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     // MARK: - Actions
     @IBAction func selectDarkThemeButton(_ sender: UIButton) {
